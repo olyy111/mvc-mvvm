@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div>A: <input id="points-a"></input><div>
+  <div>B: <span id="points-b"></span></div>
+  <script src="event.js"></script>
+  <script src="model".js"></script>
+  <script src="view.js"></script>
+  <script src="controller.js"></script>
+  <script>
+    const m1 = new Model(123)
+    const v1 = new FormView(m1, document.getElementById('points-a'))
+    const v2 = new View(m1, document.getElementById('points-b'))
+    const c1 = new Controller(m1, v1)
+    setTimeout(function () {
+      m1.setValue(1000)
+    }, 1000)
+    v1.show()
+    v2.show()
+  </script>
+</body>
+</html>
